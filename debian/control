@@ -1,0 +1,35 @@
+Source: lua-penlight
+Section: interpreters
+Priority: optional
+Maintainer: Enrico Tassi <gareuselesinge@debian.org>
+Build-Depends: debhelper (>= 9), lua-filesystem (>= 1.6.3), dh-lua (>= 21), lua-ldoc (>= 1.4.3-3)
+Standards-Version: 3.9.6
+Homepage: http://stevedonovan.github.com/Penlight/
+Vcs-Svn: svn://svn.debian.org/pkg-lua/packages/lua-penlight
+Vcs-Browser: http://svn.debian.org/viewsvn/pkg-lua/packages/lua-penlight
+
+Package: lua-penlight
+Architecture: all
+Depends: ${misc:Depends}
+Provides: ${lua:Provides}
+Recommends: lua-filesystem, lua-expat
+XB-Lua-Versions: ${lua:Versions}
+Description: Collection of general purpose libraries for the Lua language
+ Penlight is a set of pure Lua libraries focusing on input data handling (such
+ as reading configuration files), functional programming (such as map, reduce,
+ placeholder expressions,etc), and OS path management. Much of the functionality
+ is inspired by the Python standard libraries.
+
+Package: lua-penlight-dev
+Section: libdevel
+Architecture: all
+Depends: ${misc:Depends}
+Provides: ${lua:Provides}
+XB-Lua-Versions: ${lua:Versions}
+Description: Collection of general purpose libraries for the Lua language
+ Penlight is a set of pure Lua libraries focusing on input data handling (such
+ as reading configuration files), functional programming (such as map, reduce,
+ placeholder expressions,etc), and OS path management. Much of the functionality
+ is inspired by the Python standard libraries.
+ .
+ This package contains the documentation of the penlight library.

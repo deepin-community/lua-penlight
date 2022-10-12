@@ -1,0 +1,18 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@ --buildsystem=lua --with lua
+
+DATE=$(shell dpkg-parsechangelog -S date)
+
+override_dh_auto_configure:
+	chmod a-x lua/pl/dir.lua
+	cd doc; ldoc --date "$(DATE)" .
+	dh_auto_configure
+
+override_dh_compress:
+	dh_compress -X.html -X.lua
+
+override_dh_auto_clean:
+	rm -rf docs/api
+	chmod a+x lua/pl/dir.lua
